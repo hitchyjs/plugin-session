@@ -35,9 +35,7 @@ exports.session = {
 };
 ```
 
-::: warning
-This example doesn't work due to omitting example for configuring backend which isn't supported, yet.
-:::
+> This example doesn't work due to omitting example for configuring backend which isn't supported, yet.
 
 ## Notes
 
