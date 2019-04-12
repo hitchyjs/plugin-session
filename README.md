@@ -12,7 +12,9 @@ In your [Hitchy-based]() application run this command
 npm install --save hitchy-plugin-session hitchy-plugin-cookies
 ```
 
-to install this plugin.
+to install this plugin. 
+
+> As illustrated above you are in charge of installing _hitchy-plugin-cookies_ which is a mandatory dependency for this plugin. So, if you get an error regarding some unmet dependency on a role _cookies_ you might need to repeat this command exactly as given.
 
 After restarting Hitchy this plugin is discovered and instantly injecting policy for selecting server-side session by ID provided in cookie passed with every request. Usually, this is done by browsers implicitly. Any request missing cookie with session's ID causes start of another session and injecting instructions for saving cookie in response.
 
