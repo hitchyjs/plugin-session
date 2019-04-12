@@ -4,8 +4,22 @@
   "description": "server-side session management for Hitchy",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive --ui bdd test/scripts",
+    "lint": "eslint ."
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-cepharum": "^1.0.8",
+    "eslint-plugin-promise": "^4.1.1",
+    "hitchy-server-dev-tools": "0.0.4",
+    "mocha": "^6.1.3",
+    "should": "^13.2.3",
+    "should-http": "^0.1.1",
+    "hitchy-plugin-cookies": "^0.1.0"
+  },
+  "peerDependencies": {
+    "hitchy-plugin-cookies": "^0.1.0"
+  }
 }
