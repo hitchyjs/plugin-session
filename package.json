@@ -1,0 +1,11 @@
+{
+  "name": "hitchy-plugin-session",
+  "version": "0.1.0",
+  "description": "server-side session management for Hitchy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
