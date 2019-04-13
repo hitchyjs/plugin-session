@@ -1,5 +1,7 @@
 # hitchy-plugin-session
 
+[![Build Status](https://travis-ci.org/hitchyjs/plugin-session.svg?branch=master)](https://travis-ci.org/hitchyjs/plugin-session)
+
 ## License
 
 MIT
