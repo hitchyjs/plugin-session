@@ -37,7 +37,7 @@ require( "should" );
 require( "should-http" );
 
 
-describe( "Hitchy instance with proxy", () => {
+describe( "Hitchy instance with plugin for server-side sessions", () => {
 	let server = null;
 	let sid = null;
 
