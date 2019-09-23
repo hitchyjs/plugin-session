@@ -7,6 +7,10 @@
     "test": "hitchy-pm cookies --exec mocha --recursive --ui bdd test/scripts",
     "lint": "eslint ."
   },
+  "repository": {
+  "type": "git",
+  "url": "git+https://github.com/hitchyjs/plugin-session.git"
+},
   "author": "",
   "license": "MIT",
   "devDependencies": {
