@@ -28,3 +28,6 @@
 
 "use strict";
 
+exports.policies = {
+	"ALL /": "session::inject",
+};

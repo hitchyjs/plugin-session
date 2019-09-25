@@ -28,9 +28,8 @@
 
 "use strict";
 
-const Session = require( "../../lib/session" );
-
 exports.inject = function( req, res, next ) {
+	const { Session } = this.services;
 	const log = this.api.log( "hitchy:session" );
 
 	if ( req.session ) {
