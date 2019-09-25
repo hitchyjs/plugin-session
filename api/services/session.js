@@ -48,9 +48,7 @@ const ptnSessionId = /^[a-z0-9_/+-]{16}$/i;
 
 let gcCounter = 0;
 
-module.exports = function( options ) {
-	const that = this;
-
+module.exports = function() {
 	/**
 	 * Implements session management.
 	 */
