@@ -1,6 +1,6 @@
 {
   "name": "hitchy-plugin-session",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "server-side session management for Hitchy",
   "main": "index.js",
   "scripts": {
