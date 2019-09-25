@@ -11,6 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/hitchyjs/plugin-session.git"
   },
+  "repository": {
+  "type": "git",
+  "url": "git+https://github.com/hitchyjs/plugin-session.git"
+},
   "author": "",
   "license": "MIT",
   "devDependencies": {
