@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "hitchy-pm cookies --exec mocha --recursive --ui bdd test/scripts",
-    "lint": "eslint ."
+    "style": "eslint ."
   },
   "repository": {
     "type": "git",
