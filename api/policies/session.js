@@ -60,7 +60,36 @@ exports.inject = function( req, res, next ) {
 			} )
 			.then( session => {
 				Object.defineProperties( req, {
-					session: { value: session },
+					session: { value: new Proxy( session, {
+						get( target, p ) {
+							switch ( p ) {
+								case "id" :
+								case "user" :
+								case "data" :
+								case "touched" :
+									return target[p];
+
+								default :
+									return target.data[p];
+							}
+						},
+						set( target, p, value ) {
+							switch ( p ) {
+								case "id" :
+								case "user" :
+								case "data" :
+									target[p] = value;
+									return true;
+
+								case "touched" :
+									return false;
+
+								default :
+									target.data[p] = value;
+									return true;
+							}
+						},
+					} ) },
 				} );
 
 				res.set( "X-Have-Session", "true" );
