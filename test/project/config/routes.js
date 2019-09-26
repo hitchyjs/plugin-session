@@ -29,19 +29,43 @@
 "use strict";
 
 exports.routes = {
-	"* /": function( req, res ) {
+	"/"( req, res ) {
 		res.json( {
 			counter: req.session.counter || 0,
 		} );
 	},
-	"* /increase": function( req, res ) {
+	"/increase"( req, res ) {
 		res.json( {
 			counter: req.session.counter = ( req.session.counter || 0 ) + 1 ,
 		} );
 	},
-	"* /alt/decrease": function( req, res ) {
+	"/alt/decrease"( req, res ) {
 		res.json( {
 			counter: req.session.counter = ( req.session.counter || 0 ) - 1 ,
 		} );
+	},
+	"/custom/read"( req, res ) {
+		this.services.Session.select( req.session.id )
+			.then( session => {
+				res.json( {
+					simulated: req.session.anyValue,
+					actual: session.anyValue,
+					redirected: session.data.anyValue,
+				} );
+			} )
+			.catch( error => res.status( 500 ).json( { error: error.message } ) );
+	},
+	"/custom/write"( req, res ) {
+		req.session.anyValue = "some-value";
+
+		this.services.Session.select( req.session.id )
+			.then( session => {
+				res.json( {
+					simulated: req.session.anyValue,
+					actual: session.anyValue,
+					redirected: session.data.anyValue,
+				} );
+			} )
+			.catch( error => res.status( 500 ).json( { error: error.message } ) );
 	},
 };

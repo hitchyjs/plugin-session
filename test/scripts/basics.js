@@ -148,4 +148,31 @@ describe( "Hitchy instance with plugin for server-side sessions", () => {
 				res.data.should.be.an.Object().which.has.size( 1 ).and.has.ownProperty( "counter" ).which.is.a.Number().and.equal( 2 );
 			} );
 	} );
+
+	it( "is redirecting attempts to write any property on session to session.data", () => {
+		sid.should.be.ok();
+
+		return HitchyDev.query.get( "/custom/read", null, {
+			cookie: `sessionId=${sid}`,
+		} )
+			.then( res => {
+				res.should.have.status( 200 );
+				res.should.have.contentType( "application/json" );
+				res.data.should.be.an.Object().which.is.empty();
+				// properties in response are undefined on server-side, thus missing here
+
+				return HitchyDev.query.get( "/custom/write", null, {
+					cookie: `sessionId=${sid}`,
+				} );
+			} )
+			.then( res => {
+				res.should.have.status( 200 );
+				res.should.have.contentType( "application/json" );
+				res.data.should.be.an.Object().which.has.size( 2 ).and.has.properties( "simulated", "redirected" );
+
+				( res.data.simulated === "some-value" ).should.be.true();
+				// res.data.actual is undefined on server-side, thus missing here
+				( res.data.redirected === "some-value" ).should.be.true();
+			} );
+	} );
 } );
