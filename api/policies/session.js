@@ -70,7 +70,7 @@ exports.inject = function( req, res, next ) {
 									return target[p];
 
 								default :
-									return target.data[p];
+									return target[p] === undefined ? target.data[p] : target[p];
 							}
 						},
 						set( target, p, value ) {
