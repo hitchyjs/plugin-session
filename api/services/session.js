@@ -73,12 +73,12 @@ module.exports = function() {
 				 * Exposes authenticated user current session is associated with.
 				 *
 				 * @name Session#user
-				 * @property {{uuid:string, name:string, roles:array}}
+				 * @property {{uuid:string}}
 				 */
 				user: {
 					get: () => user,
 					set: newUser => {
-						if ( !newUser || typeof newUser !== "object" || !newUser.uuid || !newUser.name || !newUser.roles ) {
+						if ( !newUser || typeof newUser !== "object" || !newUser.uuid ) {
 							throw new Error( "invalid user descriptor rejected" );
 						}
 

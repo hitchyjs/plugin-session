@@ -94,15 +94,6 @@ exports.inject = function( req, res, next ) {
 
 				res.set( "X-Have-Session", "true" );
 
-				if ( session.user ) {
-					const { name, roles } = session.user;
-
-					log( `DEBUG: exposing session user ${name} with roles ${roles.join( "," )}` );
-
-					res.set( "X-Authenticated-As", name );
-					res.set( "X-Authorized-As", roles.join( "," ) );
-				}
-
 				next();
 			} )
 			.catch( error => {
