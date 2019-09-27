@@ -43,7 +43,7 @@ describe( "Hitchy instance with plugin for server-side sessions", () => {
 
 	before( "starting hitchy", () => {
 		return HitchyDev.start( {
-			extensionFolder: Path.resolve( __dirname, "../.." ),
+			pluginsFolder: Path.resolve( __dirname, "../.." ),
 			testProjectFolder: Path.resolve( __dirname, "../project" ),
 		} )
 			.then( s => {
