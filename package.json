@@ -23,6 +23,6 @@
     "should-http": "^0.1.1"
   },
   "peerDependencies": {
-    "hitchy-plugin-cookies": "^0.1.1"
+    "hitchy-plugin-cookies": "^0.1.2"
   }
 }
