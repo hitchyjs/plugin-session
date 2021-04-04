@@ -1,3 +1,7 @@
+# [Hitchy](https://core.hitchy.org) has [moved its repositories](https://gitlab.com/hitchy) incl. [this one](https://gitlab.com/hitchy/plugin-session).
+
+---
+
 # hitchy-plugin-session
 
 [![Build Status](https://travis-ci.org/hitchyjs/plugin-session.svg?branch=master)](https://travis-ci.org/hitchyjs/plugin-session)
